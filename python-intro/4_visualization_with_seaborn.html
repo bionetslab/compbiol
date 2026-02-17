@@ -216,7 +216,7 @@ David B. Blumenthal, Anne Hartebrodt, Anna Möller
 <li><strong>seaborn</strong>: bulit on top of <strong>matplotlib</strong>, which in turn is built on top of <strong>NumPy</strong>.</li>
 <li>Very well integrated with <strong>pandas</strong> data frames and easier to use than matplotlib (at the price of reduced fine-grained control).</li>
 </ul>
-<div id="obvious-foundation" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;slide&quot;}}" data-tags="[]" data-execution_count="1">
+<div id="obvious-foundation" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;slide&quot;}}" data-tags="[]" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas</span>
 <span id="cb1-2"><a href=""></a><span class="im">import</span> scipy</span>
 <span id="cb1-3"><a href=""></a><span class="im">import</span> itertools <span class="im">as</span> itt</span>
@@ -224,14 +224,9 @@ David B. Blumenthal, Anne Hartebrodt, Anna Möller
 <span id="cb1-5"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="preparations" class="title-slide slide level1 center" data-number="1">
-<h1><span class="header-section-number">1</span> Preparations</h1>
-
-</section>
-
 <section>
-<section id="the-matplotlib-object-hierarchy" class="title-slide slide level1 center" data-number="2">
-<h1><span class="header-section-number">2</span> The matplotlib object hierarchy</h1>
+<section id="the-matplotlib-object-hierarchy" class="title-slide slide level1 center" data-number="1">
+<h1><span class="header-section-number">1</span> The matplotlib object hierarchy</h1>
 <ul>
 <li>Level 1: Figure (always exactly one)</li>
 <li>Level 2: Axes (= figure panel, possibly more than one).</li>
@@ -381,8 +376,8 @@ David B. Blumenthal, Anne Hartebrodt, Anna Möller
 </div>
 </section></section>
 <section>
-<section id="visualizing-individual-numeric-values" class="title-slide slide level1 center" data-number="3">
-<h1><span class="header-section-number">3</span> Visualizing individual numeric values</h1>
+<section id="visualizing-individual-numeric-values" class="title-slide slide level1 center" data-number="2">
+<h1><span class="header-section-number">2</span> Visualizing individual numeric values</h1>
 
 </section>
 <section id="bar-plots" class="slide level2">
@@ -404,8 +399,8 @@ David B. Blumenthal, Anne Hartebrodt, Anna Möller
 </div>
 <img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-8-output-1.png" class="r-stretch"></section></section>
 <section>
-<section id="visualizing-distributions-of-individual-variables" class="title-slide slide level1 center" data-number="4">
-<h1><span class="header-section-number">4</span> Visualizing distributions of individual variables</h1>
+<section id="visualizing-distributions-of-individual-variables" class="title-slide slide level1 center" data-number="3">
+<h1><span class="header-section-number">3</span> Visualizing distributions of individual variables</h1>
 
 </section>
 <section id="histograms" class="slide level2">
@@ -419,9 +414,9 @@ David B. Blumenthal, Anne Hartebrodt, Anna Möller
 <li>Can also be used to visualize discrete distributions (no binning necessary).</li>
 </ul>
 </section>
-<section id="example-plot-petal-length-distribution-in-iris-dataset-colored-by-species" class="slide level2">
-<h2>Example: plot petal length distribution in iris dataset, colored by species</h2>
-<div id="a593986d-bd11-441a-aef8-2fd723f05469" class="cell" data-execution_count="21">
+<section id="example-plot-petal-length-distribution-in-iris-dataset-colored-by-species-i" class="slide level2">
+<h2>Example: plot petal length distribution in iris dataset, colored by species (I)</h2>
+<div id="a593986d-bd11-441a-aef8-2fd723f05469" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'iris'</span>)</span>
 <span id="cb9-2"><a href=""></a>display(df.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -498,9 +493,11 @@ David B. Blumenthal, Anne Hartebrodt, Anna Möller
 </div>
 </div>
 </div>
-<div id="c84f6d6d-793f-44c9-8263-b1fe8f16288b" class="cell" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'iris'</span>)</span>
-<span id="cb10-2"><a href=""></a>sns.histplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'petal_length'</span>, hue<span class="op">=</span><span class="st">'species'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="example-plot-petal-length-distribution-in-iris-dataset-colored-by-species-ii" class="slide level2">
+<h2>Example: plot petal length distribution in iris dataset, colored by species (II)</h2>
+<div id="c84f6d6d-793f-44c9-8263-b1fe8f16288b" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>sns.histplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'petal_length'</span>, hue<span class="op">=</span><span class="st">'species'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"></section>
@@ -509,29 +506,28 @@ David B. Blumenthal, Anne Hartebrodt, Anna Möller
 
 <img src="input/kde_plot.png" width="400" class="r-stretch"><ul>
 <li>A Gaussian kernel density estimate (KDE) plot is a <strong>smoothed, continuous version of a histogram</strong>.</li>
-<li>KDE assigns probability density function (PDF) <span class="math inline">\(f_\mathcal{N}(x_i,h^2)\)</span> of normal distribution <span class="math inline">\(\mathcal{N}(x_i,h^2)\)</span> to each data point <span class="math inline">\(x_i\)</span>.</li>
+<li>KDE assigns probability density function (PDF) <span class="math inline">\(f_N(x_i,h^2)\)</span> of normal distribution <span class="math inline">\(N(x_i,h^2)\)</span> to each data point <span class="math inline">\(x_i\)</span>.</li>
 <li>Plot mixture <span class="math inline">\(f\)</span> of these individual PDFs: <span class="math display">\[
-f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^n\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-x_i)^2}{2h^2}}
+f(x)=\frac{1}{nh}\sum_{i=1}^nf_{N(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^n\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-x_i)^2}{2h^2}}
 \]</span></li>
-<li><span class="math inline">\(\mathcal{N}(x_i,h^2)\)</span> is centered at the data point <span class="math inline">\(x_i\)</span> and has standard deviation <span class="math inline">\(h\)</span> (<strong>“bandwidth” hyper-parameter</strong>).</li>
+<li><span class="math inline">\(N(x_i,h^2)\)</span> is centered at the data point <span class="math inline">\(x_i\)</span> and has standard deviation <span class="math inline">\(h\)</span> (<strong>“bandwidth” hyper-parameter</strong>).</li>
 <li><strong>Too small <span class="math inline">\(h\)</span>:</strong> noisy plot, under-smoothing.</li>
 <li><strong>Too large <span class="math inline">\(h\)</span>:</strong> small trends in data ignored, over-smoothing.</li>
 </ul>
 </section>
-<section id="example-petal-length-distribution-shown-in-kde-plots-with-different-bandwidths" class="slide level2">
-<h2>Example: petal length distribution shown in KDE plots with different bandwidths</h2>
-<div id="42e51ee0-153e-40b2-8c5a-8d904232b567" class="cell" data-execution_count="41">
+<section id="example-petal-length-distribution-as-kde-plots-with-different-bandwidths" class="slide level2">
+<h2>Example: petal length distribution as KDE plots with different bandwidths</h2>
+<div id="42e51ee0-153e-40b2-8c5a-8d904232b567" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>mosaic <span class="op">=</span> [</span>
 <span id="cb11-2"><a href=""></a>    [<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>],</span>
-<span id="cb11-3"><a href=""></a>    [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>]</span>
-<span id="cb11-4"><a href=""></a>]</span>
-<span id="cb11-5"><a href=""></a>fig, axes <span class="op">=</span> plt.subplot_mosaic(mosaic, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
-<span id="cb11-6"><a href=""></a>sns.kdeplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'petal_length'</span>, hue<span class="op">=</span><span class="st">'species'</span>, ax<span class="op">=</span>axes[<span class="dv">3</span>])</span>
-<span id="cb11-7"><a href=""></a>bws <span class="op">=</span> [<span class="fl">0.3</span>,<span class="dv">1</span>,<span class="dv">2</span>]</span>
-<span id="cb11-8"><a href=""></a><span class="cf">for</span> i, bw <span class="kw">in</span> <span class="bu">enumerate</span>(bws):</span>
-<span id="cb11-9"><a href=""></a>    sns.kdeplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'petal_length'</span>, bw_adjust<span class="op">=</span>bws[i], ax<span class="op">=</span>axes[i])</span>
-<span id="cb11-10"><a href=""></a>    axes[i].set_title(<span class="ss">f'Bandwith</span><span class="ch">\n</span><span class="ss">scaling factor = </span><span class="sc">{</span>bw<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb11-11"><a href=""></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-3"><a href=""></a>    [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>]]</span>
+<span id="cb11-4"><a href=""></a>fig, axes <span class="op">=</span> plt.subplot_mosaic(mosaic, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
+<span id="cb11-5"><a href=""></a>sns.kdeplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'petal_length'</span>, hue<span class="op">=</span><span class="st">'species'</span>, ax<span class="op">=</span>axes[<span class="dv">3</span>])</span>
+<span id="cb11-6"><a href=""></a>bws <span class="op">=</span> [<span class="fl">0.3</span>,<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb11-7"><a href=""></a><span class="cf">for</span> i, bw <span class="kw">in</span> <span class="bu">enumerate</span>(bws):</span>
+<span id="cb11-8"><a href=""></a>    sns.kdeplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'petal_length'</span>, bw_adjust<span class="op">=</span>bws[i], ax<span class="op">=</span>axes[i])</span>
+<span id="cb11-9"><a href=""></a>    axes[i].set_title(<span class="ss">f'Bandwith</span><span class="ch">\n</span><span class="ss">scaling factor = </span><span class="sc">{</span>bw<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb11-10"><a href=""></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-11-output-1.png" class="r-stretch"></section>
@@ -558,8 +554,6 @@ f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^
 <h2>Violin plots</h2>
 
 <img src="input/violin_plots.png" width="400" class="r-stretch"><ul>
-<li>Combination of a (simplified) box plot and a KDE plot.</li>
-<li>Displays the distribution of the data while preserving key summary statistics.</li>
 <li><strong>Box plot or quartile lines inside:</strong> visualization of the median, quartiles, and possible outliers.</li>
 <li><strong>KDE plot around the box plot:</strong> visualization of data density.</li>
 <li><strong>Example:</strong> Violin plots visualize bimodality of the <em>Process A</em> data, which is not shown by the box plots alone.</li>
@@ -579,7 +573,7 @@ f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^
 <img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-13-output-1.png" class="r-stretch"></section>
 <section id="exercise-1" class="slide level2">
 <h2>Exercise 1</h2>
-<p>Execute the code bellow to create a new dataframe that has shop’s visit time and days of visits. Then, make a simple boxplot where x is a day of week and y is visit time. Make a violin plot with the same setting. Which one is more informative? Why?</p>
+<p>Execute the code bellow to create a new dataframe that has shop’s visit time and days of visits. Then, make a simple boxplot where you show visit times for the 7 days of the week. Make a violin plot with the same setting. Which one is more informative? Why?</p>
 <div id="c2eeeba0-924b-40e5-973a-c72ce6416bf7" class="cell" data-execution_count="60">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -649,18 +643,16 @@ f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^
 </div>
 </section></section>
 <section>
-<section id="visualizing-relationships-between-geq-2-variables-or-samples-and-variables" class="title-slide slide level1 center" data-number="5">
-<h1><span class="header-section-number">5</span> Visualizing relationships (between <span class="math inline">\(\geq 2\)</span> variables or samples and variables)</h1>
+<section id="visualizing-relationships-between-geq-2-variables-or-samples-and-variables" class="title-slide slide level1 center" data-number="4">
+<h1><span class="header-section-number">4</span> Visualizing relationships (between <span class="math inline">\(\geq 2\)</span> variables or samples and variables)</h1>
 
 </section>
-<section id="d-scatter-plots" class="slide level2">
+<section id="d-scatter-plots" class="slide level2 nostretch">
 <h2>2D scatter plots</h2>
-
-<img src="input/correlation_regression.png" width="600" class="r-stretch"><ul>
-<li>Each <strong>point</strong> represents an observation, where the <span class="math inline">\(x\)</span>-coordinate corresponds to one variable, and the <span class="math inline">\(y\)</span>-coordinate corresponds to another.</li>
+<p><img src="input/correlation_regression.png" width="400"></p>
+<ul>
 <li>Helps to <strong>identify trends, correlations, or outliers</strong> between the two variables.</li>
-<li><strong>Points that are close together:</strong> indicative of strong relationship.</li>
-<li><strong>Spread-out points:</strong> suggest weaker relationships.</li>
+<li><strong>Points that are close together:</strong> indicative of strong relationship. <strong>Spread-out points:</strong> suggest weaker relationships.</li>
 <li><strong>Annotate with linear regression model:</strong> slope <span class="math inline">\(\beta\)</span> quantifies effect size of linear relationship.</li>
 <li><strong>Annotate with Pearson’s correlation coefficient <span class="math inline">\(r\)</span>:</strong> quantifies strength of linear relationship.</li>
 <li><strong>Strength <span class="math inline">\(\neq\)</span> effect size:</strong> Strength <span class="math inline">\(r=(\beta\sigma_\mathbf{x})/\sigma_\mathbf{y}\)</span> positively proportional to <span class="math inline">\(\beta\)</span> and standard deviation <span class="math inline">\(\sigma_\mathbf{x}\)</span> of <span class="math inline">\(\mathbf{x}\)</span> but negatively proportional to standard deviation <span class="math inline">\(\sigma_\mathbf{y}\)</span> of <span class="math inline">\(\mathbf{y}\)</span></li>
@@ -682,100 +674,21 @@ f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^
 <li>Load the dataset named <strong>diamonds</strong>. Make a relplot that shows the relationship between price and carat. Separate the results by a quality of a cut.</li>
 <li>The simple linear regression model used above is very simple to fit, however, it is not appropriate for some kinds of datasets. The Anscombe’s quartet dataset shows a few examples where simple linear regression provides an identical estimate of a relationship where simple visual inspection clearly shows differences. Load the <strong>anscombe</strong> dataset then slice it by the variable “dataset”, and find an appropreate fit for dataset I, II and III. <strong>Hint:</strong> Utilize the <code>order</code> parameter of <code>sns.regplot</code> to estimate polynomial regression and the <code>robust</code> parameter to de-weight outliers.</li>
 </ul>
-<div id="royal-roberts" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-execution_count="83">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>sns.countplot(x <span class="op">=</span> <span class="st">'class'</span>, hue <span class="op">=</span> <span class="st">'who'</span>, data <span class="op">=</span> titanic, palette <span class="op">=</span> <span class="st">'magma'</span>)</span>
-<span id="cb16-2"><a href=""></a>plt.title(<span class="st">'Survivors'</span>)</span>
-<span id="cb16-3"><a href=""></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-16-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="39cf70fb" class="cell" data-execution_count="103">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb17-2"><a href=""></a>rain <span class="op">=</span> pd.read_csv(<span class="st">'input/annual_precip.csv'</span>, skiprows<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb17-3"><a href=""></a>rain.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="b2802920" class="cell" data-execution_count="112">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>rain.head()</span>
-<span id="cb18-2"><a href=""></a>subset_rain <span class="op">=</span> rain.sort_values(<span class="st">'precip'</span>,ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="966d04b7" class="cell" data-execution_count="120">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>ax <span class="op">=</span> sns.barplot(data<span class="op">=</span>subset_rain, y<span class="op">=</span><span class="st">'precip'</span>, x<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb19-2"><a href=""></a>ax.set_xticklabels(<span class="bu">list</span>(subset_rain.country.values),rotation<span class="op">=</span><span class="dv">45</span>,ha <span class="op">=</span> <span class="st">'right'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="120">
-<pre><code>[Text(0, 0, 'Sao Tome and Principe'),
- Text(1, 0, 'Papua New Guinea'),
- Text(2, 0, 'Solomon Islands'),
- Text(3, 0, 'Costa Rica'),
- Text(4, 0, 'Malaysia'),
- Text(5, 0, 'Brunei Darussalam'),
- Text(6, 0, 'Indonesia'),
- Text(7, 0, 'Panama'),
- Text(8, 0, 'Bangladesh'),
- Text(9, 0, 'Colombia')]</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-19-output-2.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="dbe5b5d9" class="cell" data-execution_count="100">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a>sns.scatterplot(data<span class="op">=</span>rain,y<span class="op">=</span><span class="st">'area'</span>,x<span class="op">=</span><span class="st">'precip'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-20-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="c02c4f63" class="cell" data-execution_count="101">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>sns.histplot(data<span class="op">=</span>rain,x<span class="op">=</span><span class="st">'precip'</span>,kde<span class="op">=</span><span class="va">True</span>,stat<span class="op">=</span><span class="st">'proportion'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-21-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="1afab507" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="102">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>sns.histplot(data<span class="op">=</span>rain,x<span class="op">=</span><span class="st">'area'</span>,kde<span class="op">=</span><span class="va">True</span>,stat<span class="op">=</span><span class="st">'proportion'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-22-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
 <section id="heat-maps" class="slide level2">
 <h2>Heat maps</h2>
 <p><img src="input/heatmap_1.png" width="300"> <img src="input/heatmap_2.png" width="300"></p>
 <ul>
 <li>2D graphical representation of data where <strong>values are represented by colors</strong>.</li>
-<li>Heat maps are commonly used to visualize relationships between two or more variables, especially when dealing with large datasets.</li>
-<li>Heat maps can also be used to visualize relationships between samples and variables.</li>
-<li>Heat maps are especially useful for showing patterns, trends, and correlations across multiple variables.</li>
 <li><strong>Sample <span class="math inline">\(\times\)</span> variable heat maps:</strong> Each cell represents the value of a variable for a specific sample.</li>
 <li><strong>Variable <span class="math inline">\(\times\)</span> variables heat maps:</strong> Each cell represents a measure of correlation between two variables across several (or all) samples.</li>
 </ul>
 </section>
-<section id="example-numbers-of-passengers-per-months-over-12-years" class="slide level2">
-<h2>Example: numbers of passengers per months over 12 years</h2>
-<div id="parallel-accreditation" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;slide&quot;}}" data-execution_count="72">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>flights<span class="op">=</span>sns.load_dataset(<span class="st">'flights'</span>)</span>
-<span id="cb24-2"><a href=""></a>display(flights.head())</span>
-<span id="cb24-3"><a href=""></a>flights <span class="op">=</span> flights.pivot(index<span class="op">=</span><span class="st">'month'</span>, columns<span class="op">=</span><span class="st">'year'</span>, values<span class="op">=</span><span class="st">'passengers'</span>)</span>
-<span id="cb24-4"><a href=""></a>flights.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="example-numbers-of-passengers-per-months-over-12-years-i" class="slide level2">
+<h2>Example: numbers of passengers per months over 12 years (I)</h2>
+<div id="parallel-accreditation" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;slide&quot;}}" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>flights<span class="op">=</span>sns.load_dataset(<span class="st">'flights'</span>)</span>
+<span id="cb16-2"><a href=""></a>display(flights.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <style scoped="">
@@ -837,7 +750,14 @@ f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^
 
 </div>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="72">
+</div>
+</section>
+<section id="example-numbers-of-passengers-per-months-over-12-years-ii" class="slide level2">
+<h2>Example: numbers of passengers per months over 12 years (II)</h2>
+<div id="0eb65960-18ca-4f30-a981-fae732085ed2" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>flights <span class="op">=</span> flights.pivot(index<span class="op">=</span><span class="st">'month'</span>, columns<span class="op">=</span><span class="st">'year'</span>, values<span class="op">=</span><span class="st">'passengers'</span>)</span>
+<span id="cb17-2"><a href=""></a>flights.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -968,19 +888,19 @@ f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^
 </div>
 </div>
 </div>
+</section>
+<section id="example-numbers-of-passengers-per-months-over-12-years-iii" class="slide level2">
+<h2>Example: numbers of passengers per months over 12 years (III)</h2>
 <div id="heated-negative" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="70">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>sns.heatmap(flights,linewidths<span class="op">=</span><span class="fl">.5</span>, cmap<span class="op">=</span><span class="st">"YlGnBu"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>sns.heatmap(flights,linewidths<span class="op">=</span><span class="fl">.5</span>, cmap<span class="op">=</span><span class="st">"YlGnBu"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-24-output-1.png" class="r-stretch"></section>
-<section id="example-visualizing-correlations-between-car-accident-properties" class="slide level2">
-<h2>Example: visualizing correlations between car accident properties</h2>
-<div id="alert-venue" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-execution_count="75">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>car_crashes <span class="op">=</span> sns.load_dataset(<span class="st">"car_crashes"</span>)</span>
-<span id="cb26-2"><a href=""></a>display(car_crashes.head())</span>
-<span id="cb26-3"><a href=""></a>car_crashes <span class="op">=</span> car_crashes.drop(<span class="st">'abbrev'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb26-4"><a href=""></a>corr<span class="op">=</span>car_crashes.corr()</span>
-<span id="cb26-5"><a href=""></a>display(corr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-18-output-1.png" class="r-stretch"></section>
+<section id="example-visualizing-correlations-between-car-accident-properties-i" class="slide level2">
+<h2>Example: visualizing correlations between car accident properties (I)</h2>
+<div id="alert-venue" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>car_crashes <span class="op">=</span> sns.load_dataset(<span class="st">"car_crashes"</span>)</span>
+<span id="cb19-2"><a href=""></a>display(car_crashes.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <style scoped="">
@@ -1072,6 +992,14 @@ f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^
 
 </div>
 </div>
+</div>
+</section>
+<section id="example-visualizing-correlations-between-car-accident-properties-ii" class="slide level2">
+<h2>Example: visualizing correlations between car accident properties (II)</h2>
+<div id="6da4eee9-e50a-4520-9780-fe14637719d9" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>car_crashes <span class="op">=</span> car_crashes.drop(<span class="st">'abbrev'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb20-2"><a href=""></a>corr<span class="op">=</span>car_crashes.corr()</span>
+<span id="cb20-3"><a href=""></a>display(corr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <style scoped="">
@@ -1178,22 +1106,106 @@ f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^
 </div>
 </div>
 </div>
-<div id="e25aa260-17c9-46c2-adc3-c182b7459bbe" class="cell" data-execution_count="81">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>sns.heatmap(corr,linewidths<span class="op">=</span><span class="fl">.5</span>, cmap<span class="op">=</span><span class="st">"YlGnBu"</span>, annot<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="example-visualizing-correlations-between-car-accident-properties-iii" class="slide level2">
+<h2>Example: visualizing correlations between car accident properties (III)</h2>
+<div id="e25aa260-17c9-46c2-adc3-c182b7459bbe" class="cell" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a>sns.heatmap(corr, linewidths<span class="op">=</span><span class="fl">.5</span>, cmap<span class="op">=</span><span class="st">"YlGnBu"</span>, annot<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-26-output-1.png" class="r-stretch"></section>
+<img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-21-output-1.png" class="r-stretch"></section>
 <section id="exercise-3" class="slide level2">
 <h2>Exercise 3</h2>
-<p>Create a heatmap of flights happened between 1955 and 1960 (including both ends, use numpy/pandas for this). Play around with the parameters of <code>sns.heatmap</code> to change the look of the plot.</p>
+<p>Create a heatmap of flights happened between 1955 and 1960 (including both ends, use numpy/pandas for this). Play around with the parameters of <code>sns.heatmap</code> to change the look of the plot. Save the plot as a PDF file.</p>
 </section></section>
-<section id="solutions-for-exercises" class="title-slide slide level1 center" data-number="6">
-<h1><span class="header-section-number">6</span> Solutions for exercises</h1>
-<p><a name="ex1sol" href="">Solution for Exercise 1</a></p>
-<div id="8bf7d865" class="cell" data-execution_count="33">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>diamonds <span class="op">=</span> sns.load_dataset(<span class="st">"diamonds"</span>)</span>
-<span id="cb28-2"><a href=""></a>display(diamonds.head())</span>
-<span id="cb28-3"><a href=""></a><span class="bu">type</span>(diamonds)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section>
+<section id="solutions-for-exercises" class="title-slide slide level1 center" data-number="5">
+<h1><span class="header-section-number">5</span> Solutions for exercises</h1>
+
+</section>
+<section id="solution-for-exercise-1" class="slide level2">
+<h2>Solution for Exercise 1</h2>
+<div id="e90ba8ce-85e6-4732-a050-bb1d04b281b3" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb22-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb22-3"><a href=""></a>mon <span class="op">=</span> <span class="bu">list</span>(np.random.normal(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">20</span>)) <span class="op">+</span> <span class="bu">list</span>(np.random.normal(<span class="dv">18</span>,<span class="dv">1</span>,<span class="dv">20</span>))</span>
+<span id="cb22-4"><a href=""></a>tue <span class="op">=</span> <span class="bu">list</span>(np.random.normal(<span class="dv">8</span>,<span class="dv">1</span>,<span class="dv">20</span>)) <span class="op">+</span> <span class="bu">list</span>(np.random.normal(<span class="dv">19</span>,<span class="dv">2</span>,<span class="dv">20</span>))</span>
+<span id="cb22-5"><a href=""></a>wed <span class="op">=</span> <span class="bu">list</span>(np.random.normal(<span class="dv">18</span>,<span class="dv">2</span>,<span class="dv">40</span>))</span>
+<span id="cb22-6"><a href=""></a>restaurant <span class="op">=</span> pd.DataFrame([mon<span class="op">+</span>tue<span class="op">+</span>wed,[<span class="st">"Monday"</span>]<span class="op">*</span><span class="bu">len</span>(mon)<span class="op">+</span>[<span class="st">"Tuesday"</span>]<span class="op">*</span><span class="bu">len</span>(tue)<span class="op">+</span>[<span class="st">"Wednesday"</span>]<span class="op">*</span><span class="bu">len</span>(wed)])</span>
+<span id="cb22-7"><a href=""></a>restaurant <span class="op">=</span> restaurant.T</span>
+<span id="cb22-8"><a href=""></a>restaurant.columns <span class="op">=</span> [<span class="st">"visit_time"</span>, <span class="st">"day"</span>]</span>
+<span id="cb22-9"><a href=""></a>restaurant[<span class="st">"visit_time"</span>] <span class="op">=</span> restaurant[<span class="st">"visit_time"</span>].astype(<span class="st">'float'</span>)</span>
+<span id="cb22-10"><a href=""></a>restaurant.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">visit_time</th>
+<th data-quarto-table-cell-role="th">day</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>9.341641</td>
+<td>Monday</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>8.215534</td>
+<td>Monday</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>9.257650</td>
+<td>Monday</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>10.289157</td>
+<td>Monday</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>7.230076</td>
+<td>Monday</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="bd355a26-6583-4651-b11a-c079fe2f5a73" class="cell" data-execution_count="32">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">3</span>))</span>
+<span id="cb23-2"><a href=""></a>sns.boxplot(data<span class="op">=</span>restaurant, x<span class="op">=</span><span class="st">'day'</span>, y<span class="op">=</span><span class="st">'visit_time'</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
+<span id="cb23-3"><a href=""></a>sns.violinplot(data<span class="op">=</span>restaurant, x<span class="op">=</span><span class="st">'day'</span>, y<span class="op">=</span><span class="st">'visit_time'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>])</span>
+<span id="cb23-4"><a href=""></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-23-output-1.png" class="r-stretch"></section>
+<section id="solution-for-exercise-2" class="slide level2">
+<h2>Solution for Exercise 2</h2>
+<div id="8bf7d865" class="cell" data-execution_count="34">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>diamonds <span class="op">=</span> sns.load_dataset(<span class="st">"diamonds"</span>)</span>
+<span id="cb24-2"><a href=""></a>display(diamonds.head())</span>
+<span id="cb24-3"><a href=""></a>cuts <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(diamonds.cut))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <style scoped="">
@@ -1297,12 +1309,104 @@ f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^
 
 </div>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="33">
-<pre><code>pandas.core.frame.DataFrame</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<pre><code>['Good', 'Ideal', 'Fair', 'Very Good', 'Premium']</code></pre>
 </div>
 </div>
-<div id="joint-farmer" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="35">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>sns.relplot(data<span class="op">=</span>diamonds, x<span class="op">=</span><span class="st">"carat"</span>, y<span class="op">=</span><span class="st">"price"</span>, col<span class="op">=</span><span class="st">"cut"</span>, col_wrap<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="joint-farmer" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="41">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>mosaic <span class="op">=</span> [[<span class="st">'Ideal'</span>, <span class="st">'Premium'</span>, <span class="st">'Very Good'</span>],</span>
+<span id="cb26-2"><a href=""></a>          [<span class="st">'Good'</span>, <span class="st">'Fair'</span>, <span class="st">'.'</span>]]</span>
+<span id="cb26-3"><a href=""></a>fig, axes <span class="op">=</span> plt.subplot_mosaic(mosaic<span class="op">=</span>mosaic, figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">6</span>))</span>
+<span id="cb26-4"><a href=""></a><span class="cf">for</span> cut <span class="kw">in</span> cuts:</span>
+<span id="cb26-5"><a href=""></a>    sns.scatterplot(data<span class="op">=</span>diamonds[diamonds.cut <span class="op">==</span> cut], x <span class="op">=</span> <span class="st">'carat'</span>, y<span class="op">=</span><span class="st">'price'</span>, ax<span class="op">=</span>axes[cut])</span>
+<span id="cb26-6"><a href=""></a>    axes[cut].set_title(<span class="ss">f'Cut = </span><span class="sc">{</span>cut<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb26-7"><a href=""></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-25-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="dried-feelings" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="55">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>anscombe <span class="op">=</span> sns.load_dataset(<span class="st">"anscombe"</span>)</span>
+<span id="cb27-2"><a href=""></a>display(anscombe.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">dataset</th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>I</td>
+<td>10.0</td>
+<td>8.04</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>I</td>
+<td>8.0</td>
+<td>6.95</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>I</td>
+<td>13.0</td>
+<td>7.58</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>I</td>
+<td>9.0</td>
+<td>8.81</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>I</td>
+<td>11.0</td>
+<td>8.33</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="d558d8e9-edd5-498b-9f36-78bb5bdad5e4" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>sns.lmplot(x<span class="op">=</span><span class="st">"x"</span>, y<span class="op">=</span><span class="st">"y"</span>, col<span class="op">=</span><span class="st">'dataset'</span>, col_wrap<span class="op">=</span><span class="dv">2</span>, data<span class="op">=</span>anscombe, height<span class="op">=</span><span class="dv">3</span>, order<span class="op">=</span><span class="dv">2</span>, </span>
+<span id="cb28-2"><a href=""></a>           ci<span class="op">=</span><span class="va">None</span>, scatter_kws<span class="op">=</span>{<span class="st">"s"</span>: <span class="dv">80</span>, <span class="st">'color'</span>:<span class="st">'red'</span>}, line_kws<span class="op">=</span>{<span class="st">'color'</span>:<span class="st">'green'</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="30a27690" class="cell" data-execution_count="66">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>mosaic <span class="op">=</span> [[<span class="st">'I'</span>, <span class="st">'II'</span>, <span class="st">'III'</span>]]</span>
+<span id="cb29-2"><a href=""></a>fig, axes <span class="op">=</span> plt.subplot_mosaic(mosaic<span class="op">=</span>mosaic, figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">3</span>))</span>
+<span id="cb29-3"><a href=""></a>sns.regplot(data<span class="op">=</span>anscombe[anscombe.dataset <span class="op">==</span> <span class="st">'I'</span>], x <span class="op">=</span> <span class="st">'x'</span>, y<span class="op">=</span><span class="st">'y'</span>, ax<span class="op">=</span>axes[<span class="st">'I'</span>])</span>
+<span id="cb29-4"><a href=""></a>sns.regplot(data<span class="op">=</span>anscombe[anscombe.dataset <span class="op">==</span> <span class="st">'II'</span>], x <span class="op">=</span> <span class="st">'x'</span>, y<span class="op">=</span><span class="st">'y'</span>, ax<span class="op">=</span>axes[<span class="st">'II'</span>], order<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb29-5"><a href=""></a>sns.regplot(data<span class="op">=</span>anscombe[anscombe.dataset <span class="op">==</span> <span class="st">'III'</span>], x <span class="op">=</span> <span class="st">'x'</span>, y<span class="op">=</span><span class="st">'y'</span>, ax<span class="op">=</span>axes[<span class="st">'III'</span>], robust<span class="op">=</span><span class="va">True</span>, ci<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb29-6"><a href=""></a><span class="cf">for</span> dataset <span class="kw">in</span> [<span class="st">'I'</span>, <span class="st">'II'</span>, <span class="st">'III'</span>]:</span>
+<span id="cb29-7"><a href=""></a>    axes[dataset].set_title(<span class="ss">f'Dataset </span><span class="sc">{</span>dataset<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb29-8"><a href=""></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1311,89 +1415,18 @@ f(x)=\frac{1}{nh}\sum_{i=1}^nf_{\mathcal{N}(x_i,h^2)}(x)=\frac{1}{nh}\sum_{i=1}^
 </div>
 </div>
 </div>
-<p><a href="#ex1">Back to Exercise 1</a></p>
-<p><a name="ex2sol" href="">Solution for Exercise 2</a></p>
-<div id="dried-feelings" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="147">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>anscombe <span class="op">=</span> sns.load_dataset(<span class="st">"anscombe"</span>)</span>
-<span id="cb31-2"><a href=""></a>sns.lmplot(x<span class="op">=</span><span class="st">"x"</span>, y<span class="op">=</span><span class="st">"y"</span>, col<span class="op">=</span><span class="st">'dataset'</span>, col_wrap<span class="op">=</span><span class="dv">2</span>, data<span class="op">=</span>anscombe, height<span class="op">=</span><span class="dv">3</span>, order<span class="op">=</span><span class="dv">2</span>, </span>
-<span id="cb31-3"><a href=""></a>           ci<span class="op">=</span><span class="va">None</span>, scatter_kws<span class="op">=</span>{<span class="st">"s"</span>: <span class="dv">80</span>, <span class="st">'color'</span>:<span class="st">'red'</span>}, line_kws<span class="op">=</span>{<span class="st">'color'</span>:<span class="st">'green'</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-29-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="continent-bahrain" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="162">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>sns.lmplot(x<span class="op">=</span><span class="st">"x"</span>, y<span class="op">=</span><span class="st">"y"</span>, data<span class="op">=</span>anscombe.query(<span class="st">"dataset == 'II'"</span>),</span>
-<span id="cb32-2"><a href=""></a>           order<span class="op">=</span><span class="dv">2</span>, ci<span class="op">=</span><span class="va">None</span>, </span>
-<span id="cb32-3"><a href=""></a>           scatter_kws<span class="op">=</span>{<span class="st">"s"</span>: <span class="dv">80</span>, <span class="st">'color'</span>:<span class="st">'red'</span>},</span>
-<span id="cb32-4"><a href=""></a>           line_kws<span class="op">=</span>{<span class="st">'color'</span>:<span class="st">'red'</span>}</span>
-<span id="cb32-5"><a href=""></a>          )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-31-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="psychological-screen" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="58">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>sns.lmplot(x<span class="op">=</span><span class="st">"x"</span>, y<span class="op">=</span><span class="st">"y"</span>, data<span class="op">=</span>anscombe[anscombe.dataset <span class="op">==</span> <span class="st">'III'</span>],</span>
-<span id="cb33-2"><a href=""></a>           robust<span class="op">=</span><span class="va">True</span>, ci<span class="op">=</span><span class="va">None</span>, scatter_kws<span class="op">=</span>{<span class="st">"s"</span>: <span class="dv">80</span>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-32-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><a href="#ex2">Back to Exercise 2</a></p>
-<p><a name="ex3sol" href="">Solution for Exercise 3</a></p>
-<div id="better-climate" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="179">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href=""></a>sns.boxplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"visit_time"</span>,</span>
-<span id="cb34-2"><a href=""></a>                    data<span class="op">=</span>restaurant)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-33-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="related-fireplace" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="181">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href=""></a>sns.violinplot(x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"visit_time"</span>,</span>
-<span id="cb35-2"><a href=""></a>                    data<span class="op">=</span>restaurant,cut<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-34-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Violin plot is more informative as it shows bimodal nature of the data and allows us to conclude that on Mondays and Tuesdays the restaurant is mostly occupated in the morning and in the evening</p>
-<p><a href="#ex3">Back to Exercise 3</a></p>
-<p><a name="ex4sol" href="">Solution for Exercise 4</a></p>
-<div id="grave-progress" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;slide&quot;}}" data-execution_count="213">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a>sns.set_context(<span class="st">"paper"</span>)</span>
-<span id="cb36-2"><a href=""></a>p <span class="op">=</span> sns.heatmap(flights[np.arange(<span class="dv">1954</span>,<span class="dv">1961</span>)],cmap <span class="op">=</span> <span class="st">"Oranges"</span> )</span>
-<span id="cb36-3"><a href=""></a>fig <span class="op">=</span> p.get_figure()</span>
-<span id="cb36-4"><a href=""></a></span>
-<span id="cb36-5"><a href=""></a>fig.savefig(<span class="st">"output/flights.pdf"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-35-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><a href="#ex4">Back to Exercise 4</a></p>
-
 </section>
+<section id="solution-for-exercise-3" class="slide level2">
+<h2>Solution for Exercise 3</h2>
+<div id="grave-progress" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;slide&quot;}}" data-execution_count="68">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>sns.set_context(<span class="st">"paper"</span>)</span>
+<span id="cb30-2"><a href=""></a>p <span class="op">=</span> sns.heatmap(flights[np.arange(<span class="dv">1955</span>,<span class="dv">1961</span>)],cmap <span class="op">=</span> <span class="st">"Oranges"</span> )</span>
+<span id="cb30-3"><a href=""></a>fig <span class="op">=</span> p.get_figure()</span>
+<span id="cb30-4"><a href=""></a>fig.savefig(<span class="st">"output/flights.pdf"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+
+<img data-src="4_visualization_with_seaborn_files/figure-revealjs/cell-29-output-1.png" class="r-stretch"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="input/FAU.png" class="slide-logo"></p>

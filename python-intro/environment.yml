@@ -10,3 +10,6 @@ dependencies:
   - scipy
   - numpy
   - seaborn
+  - pydantic
+  - pytest
+  - pytest-cov
