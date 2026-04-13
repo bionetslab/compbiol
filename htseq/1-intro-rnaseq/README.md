@@ -46,18 +46,15 @@ Open `assignment.ipynb` and work through the sections in order:
 
 The test data object (`*.h5ad`) is provided in the `data/` folder and must **not** be committed.
 
-## Submission
+## Results
 
-Commit **only** these files:
-
+At the end of the session you will have
 1. `assignment.ipynb` — your completed notebook
 2. `obs.tsv` — `adata.obs` exported as tab-separated text (must contain `manual_celltype_labels`)
 3. `de_results.csv` — differential expression results
 
-Do **not** commit `.h5ad`, `.h5`, or other large binary data files.
-
 ## Automated testing
-You can check whether you 
+You can check whether you applied all required functions in the correct order and succesfully by running the command below which will automatically test your assignment. Please note that this is very rudimentary and more like a sanity check.
 
 ```bash
 pixi run test
