@@ -1,15 +1,14 @@
 name: python-intro
 channels:
   - conda-forge
-  - anaconda
 dependencies:
-  - python>=3.6
+  - python>=3.8
   - jupyterlab
   - ipykernel
+  - numpy
   - pandas
   - scipy
-  - numpy
+  - matplotlib
   - seaborn
-  - pydantic
+  - pydantic>=2
   - pytest
-  - pytest-cov
