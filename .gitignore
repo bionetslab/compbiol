@@ -365,6 +365,12 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+## intro-to-differential-expression tutorial data & outputs
+htseq/2-intro-to-differential-expression/data/
+htseq/2-intro-to-differential-expression/output/
+htseq/2-intro-to-differential-expression/nfcore_run/results/
+htseq/2-intro-to-differential-expression/.pixi/
+
 # IPython
 profile_default/
 ipython_config.py

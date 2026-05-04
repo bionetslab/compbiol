@@ -1,0 +1,21 @@
+[project]
+name = "intro-to-differential-expression"
+version = "0.1.0"
+description = "Differential expression analysis with PyDESeq2"
+channels = ["conda-forge", "bioconda"]
+platforms = ["linux-64", "osx-arm64", "osx-64", "win-64"]
+
+[dependencies]
+python = ">=3.10"
+jupyterlab = ">=4.0"
+ipykernel = "*"
+numpy = "*"
+pandas = "*"
+matplotlib = "*"
+seaborn = "*"
+pydeseq2 = "*"
+adjusttext = "*"
+
+[tasks]
+notebook = { cmd = "jupyter lab tutorial.ipynb" }
+install-kernel = { cmd = "python -m ipykernel install --user --name pixi_de_intro --display-name pixi_de_intro" }
