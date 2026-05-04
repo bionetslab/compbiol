@@ -1,0 +1,33 @@
+[workspace]
+name = "intro-scrna-seq"
+version = "0.1.0"
+description = "Introduction to single-cell RNA-seq: quality control, clustering, annotation, and differential expression"
+channels = ["conda-forge", "bioconda"]
+platforms = ["linux-64", "osx-arm64", "osx-64", "win-64"]
+
+[dependencies]
+python = ">=3.10,<3.13"
+scanpy = ">=1.9"
+anndata = ">=0.9"
+scvi-tools = ">=1.0"
+pandas = ">=2.0"
+numpy = ">=1.24"
+scipy = ">=1.11"
+matplotlib = ">=3.7"
+seaborn = ">=0.12"
+statsmodels = ">=0.14"
+leidenalg = ">=0.10"
+python-igraph = ">=0.11"
+jupyterlab = ">=4.0"
+ipykernel = ">=6.0"
+pytest = ">=7.0"
+scikit-learn = ">=1.8.0,<2"
+
+
+
+[tasks]
+notebook = "jupyter lab assignment.ipynb"
+test = "pytest test_submission.py -v"
+install-kernel = "python -m ipykernel install --user --name pixi_scrna_intro --display-name pixi_scrna_intro"
+uninstall-kernel = "jupyter kernelspec uninstall pixi_scrna_intro"
+
