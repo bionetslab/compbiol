@@ -10,6 +10,15 @@ curl -fsSL https://pixi.sh/install.sh | sh
 ### Windows
 While it is possible to stay on Windows for most of the course, some elements require a Linux distribution. This can be obtained here ![Windows Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
+## Basic commandline navigation
+| Action | Unix (Linux/macOS) | Windows (CMD) |
+| :--- | :--- | :--- |
+| Print Working Directory | `pwd` | `cd` |
+| List Contents | `ls` | `dir` |
+| Change Directory | `cd [path]` | `cd [path]` |
+| Move Up One Level | `cd ..` | `cd ..` |
+| Make Directory | `mkdir [name]` | `mkdir [name]` |
+| Clear Screen | `clear` | `cls` |
 
 ## Basic Git commands.
 Git is a version control system used to track changes in source code during software development. The following commands represent the standard workflow for managing a local repository and interacting with a remote server:
