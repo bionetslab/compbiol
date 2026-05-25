@@ -1,21 +1,33 @@
 # Mini-project
-## Step 1: (optional) Download data from GEO
-GSE231587
-This step is time consuming and requires a powerful computer
-- explain what GEO is
-- explain what the SRA is
-- explain how to download data using fetchNGS
+## Step 1: (optional) Download data from GEO (GSE231587)
+It could make sense to go to the GEO website once, to check out how it looks and where to obtain the data.
+
+This step is time consuming and requires a powerful computer, so if you don't have the time, just try to find out 
+- what GEO is.
+- what the SRA is.
+- download data using fetchNGS (nf-co.re) pipeline (one sample).
 
 ## Step 2: (optional) preprocess the data using nfcore/scrnaseq
-
+nf-co.re/scrnaseq
 
 ## Step 3: Do cell type annotation.
-You can download the data using the link provided here. The dataset is from a study on Multiple sclerosis lesions in the brain. You can look at this paper https://www.neurology.org/doi/10.1212/NXI.0000000000200213 for further information on the study.
+The data is already preprocessed. You can download the data using the link provided here. The dataset is from a study on Multiple sclerosis lesions in the brain. You can look at this paper https://www.neurology.org/doi/10.1212/NXI.0000000000200213 for further information on the study.
 
-1. Which cell types do you expect?
+## Step 3.0 Look at the data
+1. Which cell types do you find? Look at the paper to see which ones are annotated?
 2. How was the data annotated?
-3. What is the experimental set up?
+3. 
+## Step 3.1 Quality control
+Perform standard QC. Check
+- Mitochondrial content
+- Ribosomal Content
+- Number of cells and genes
+- Doublets
+- Ambient RNA?
+  
 
+## Step 3.2 Annotate the clusters
+- Use two complementary methods.
 The preprocessed dataset can be found at: https://zenodo.org/records/17733765/files/snRNA.tar.gz?download=1
 
 ## Step 4: Pseudobulking (new) and differential expression
