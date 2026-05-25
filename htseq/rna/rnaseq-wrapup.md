@@ -1,5 +1,6 @@
 # Mini-project
 ## Step 1: (optional) Download data from GEO
+GSE231587
 This step is time consuming and requires a powerful computer
 - explain what GEO is
 - explain what the SRA is
