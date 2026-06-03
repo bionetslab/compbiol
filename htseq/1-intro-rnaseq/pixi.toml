@@ -22,6 +22,9 @@ jupyterlab = ">=4.0"
 ipykernel = ">=6.0"
 pytest = ">=7.0"
 scikit-learn = ">=1.8.0,<2"
+scikit-image = ">=0.26.0,<0.27"
+openpyxl = ">=3.1.5,<4"
+celltypist = ">=1.7.1,<2"
 
 
 
@@ -30,4 +33,9 @@ notebook = "jupyter lab assignment.ipynb"
 test = "pytest test_submission.py -v"
 install-kernel = "python -m ipykernel install --user --name pixi_scrna_intro --display-name pixi_scrna_intro"
 uninstall-kernel = "jupyter kernelspec uninstall pixi_scrna_intro"
+
+[pypi-dependencies]
+scikit-misc = ">=0.5.2, <0.6"
+maca-python = ">=1.0.1, <2"
+decoupler = ">=2.1.6, <3"
 
