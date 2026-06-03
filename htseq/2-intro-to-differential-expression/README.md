@@ -37,38 +37,4 @@ Supply the data files in the `data/` folder before opening the notebook:
 
 | File | Description |
 |------|-------------|
-| `data/counts.tsv` | Raw gene-level count matrix (genes × samples, tab-separated) |
-| `data/metadata.tsv` | Sample metadata (samples × variables, tab-separated). Must contain a `condition` column. |
-
-> **Note:** Large data files are excluded by `.gitignore` and must **not** be committed.
-
-## Tutorial sections
-
-Open `tutorial.ipynb` and work through the sections in order:
-
-| Section | Topic |
-|---------|-------|
-| 0 | Imports |
-| 1 | Load count matrix and metadata |
-| 2 | Pre-processing: filter low-count genes |
-| 3 | Run PyDESeq2 (model fitting, Wald test, results) |
-| 4 | Visualize results (MA plot, volcano plot, heatmap) |
-| 5 | Export results |
-| 6 | nf-core `differentialabundance` pipeline |
-
-Section 6 is split into three steps:
-
-| Step | Description |
-|------|-------------|
-| 6 — Step 1 | Install Nextflow and a container engine |
-| 6 — Step 2 | Understand the required input files for the pipeline |
-| 6 — Step 3 | Run the pipeline and compare its output to your manual analysis |
-
-## Results
-
-At the end of the session you will have produced:
-
-1. `output/de_results.csv` — full DE results table from PyDESeq2
-2. `output/de_results_significant.csv` — significant DE genes only
-3. `output/ma_plot.png`, `output/volcano_plot.png`, `output/heatmap_top_de_genes.png` — figures
-4. `nfcore_run/results/` — nf-core pipeline output (after running Step 3)
+| `data/read_counts.tsv` | Raw gene-level count matrix (genes × samples, tab-separated) |
