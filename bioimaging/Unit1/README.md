@@ -1,0 +1,2 @@
+Content adapted from [Bio-image Analysis Notebooks](httpshaesleinhuepf.github.ioBioImageAnalysisNotebooks) by Dr. rer. medic. Robert Haase et al., licensed under CC-BY 4.0. Code examples from the accompanying [GitHub repository](httpsgithub.comhaesleinhuepfBioImageAnalysisNotebooks) licensed under BSD 3-Clause. Additional code adapted from the [Python_image_processing](httpsgithub.comguiwitzPython_image_processing) repository by Guillaume Witz, licensed under the MIT License (Copyright © 2019 Guillaume Witz).  
+Changes and additions by Anna Möller.
