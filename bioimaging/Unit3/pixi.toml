@@ -1,0 +1,15 @@
+[workspace]
+authors = ["Anna <annamller18@gmail.com>"]
+channels = ["conda-forge"]
+name = "Unit3"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+napari = ">=0.7.1,<0.8"
+pyqt6 = ">=6.8.1,<7"
+scikit-image = ">=0.26.0,<0.27"
+napari-skimage = ">=0.7.0,<0.8"
+napari-simpleitk-image-processing = ">=0.4.9,<0.5"
