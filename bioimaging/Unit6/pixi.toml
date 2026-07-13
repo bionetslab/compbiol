@@ -1,0 +1,13 @@
+[workspace]
+authors = ["Anna <annamller18@gmail.com>"]
+channels = ["conda-forge"]
+name = "Unit6"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+jupyterlab = ">=4.6.1,<5"
+scanpy = ">=1.12.2,<2"
+squidpy = ">=1.8.2,<2"
