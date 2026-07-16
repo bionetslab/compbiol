@@ -7,15 +7,19 @@ detailing how to setup the repo and get started.
 This part of the course has 9 parts, but not all have an associated repository.
 
 
-###
-Prerequisites: 
+### Pixi: 
 Please install ![pixi](https://pixi.prefix.dev/latest/). 
 ```
 curl -fsSL https://pixi.sh/install.sh | sh
 ```
 
-### Windows
-While it is possible to stay on Windows for most of the course, some elements require a Linux distribution. This can be obtained here ![Windows Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+
+### Windows !!!
+The couse works best with UNIX like systemsSome elements of the course REQUIRE a Linux distribution! This can be obtained here ![Windows Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+## Nextflow/nf-core
+We will learn how to use nf-core on one example: You need to install it before joining the class, otherwise you will lag behind.
 
 ## Basic commandline navigation
 | Action | Unix (Linux/macOS) | Windows (CMD) |
